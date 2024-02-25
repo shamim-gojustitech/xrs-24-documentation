@@ -158,7 +158,6 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     - [3. Get Production by ID](#3-get-production-by-id)
     - [4. Update Production by ID](#4-update-production-by-id)
     - [5. Delete Production by ID](#5-delete-production-by-id)
-    - [6. Post Current Production Status Update](#6-post-current-production-status-update)
   - [Overtime Section](#overtime-section)
     - [1. Create New Overtime Entry](#1-create-new-overtime-entry)
     - [2. Get All Overtime Entries](#2-get-all-overtime-entries)
@@ -567,56 +566,47 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Method:** `PUT`
 - **Description:** `Updates information for a specific profile by ID.`
 - **URL Parameters:** - `id`: Profile ID (Example: `/profile/update/101`)
-- **Request Format:** `application/json`
+- **Request Format:** `multipart/form-data`
   ```json
-  {
-    "profileID": "GeneratedID(profile)",
-    "name": "Updated Name",
-    "email": "updated.email@example.com",
-    "religion": "Updated Religion",
-    "nationality": "Updated Nationality",
-    "gender": "Updated Gender",
-    "maritalStatus": "Updated Marital Status",
-    "birthDate": "2020-01-01",
-    "NID": "987654321",
-    "NIDPicture": "https://example.com/updated_nid_picture.jpg",
-    "photo": "https://example.com/updated_photo.jpg",
-    "aboutMe": "Updated About Me",
-    "workNumber": "987654321",
-    "personalNumber": "123456789",
-    "presentAddress": "Updated Present Address",
-    "permanentAddress": "Updated Permanent Address",
-    "emergencyContactName": "Updated Emergency Contact",
-    "emergencyContactNumber": "987654321",
-    "emergencyRelation": "Updated Relation",
-    "bankName": "Updated Bank",
-    "bankAccountNo": "987654321",
-    "bankBranch": "Updated Branch",
-    "department": "Updated Department",
-    "designation": "Updated Designation",
-    "role": "Updated Role",
-    "location": "Updated Location",
-    "dateOfJoining": "2023-01-01",
-    "currentWorkExperience": "4 years",
-    "reportsTo": "Updated Supervisor",
-    "salary": 60000,
-    "accommodationCost": 12000,
-    "workingHour": 9,
-    "workExperience": {
-      "companyName": "Updated Company",
-      "jobTitle": "Senior Software Engineer",
-      "fromDate": "2021-01-01",
-      "toDate": "2023-01-01",
-      "description": "Updated Description"
-    },
-    "educationInfo": {
-      "instituteName": "Updated University",
-      "degreeOrDiploma": "Master's",
-      "completeYear": "2022"
-    },
-    "createdAt": "Timestamp(year-month-date)",
-    "updatedAt": "Timestamp(year-month-date)"
-  }
+  name:John Doe
+  email:john.doe@example.com
+  religion:Christian
+  nationality:American
+  gender:Male
+  maritalStatus:Single
+  birthDate:1990-01-01
+  NID:123456789
+  NIDPicture:Picture(NID)
+  photo:Picture(photo)
+  aboutMe:Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  workNumber:123456789
+  personalNumber:987654321
+  presentAddress:123 Main Street, City
+  permanentAddress:456 Secondary Street, City
+  emergencyContactName:Emergency Contact
+  emergencyContactNumber:987654321
+  emergencyRelation:Relative
+  bankName:Bank of Example
+  bankAccountNo:123456789
+  bankBranch:Branch City
+  department:IT
+  designation:Developer
+  role:Backend Developer
+  location:City
+  dateOfJoining:2022-01-01
+  currentWorkExperience:3 years
+  reportsTo:Supervisor
+  salary:50000
+  accommodationCost:10000
+  workingHour:8
+  workExperience.companyName:Example Company
+  workExperience.jobTitle:Software Engineer
+  workExperience.fromDate:2020-01-01
+  workExperience.toDate:2022-01-01
+  workExperience.description:Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  educationInfo.instituteName:Example University
+  educationInfo.degreeOrDiploma:Bachelor's
+  educationInfo.completeYear:2018
   ```
 - **Response Format:** `application/json`
   - **Success Code:** `200 OK`
@@ -2125,47 +2115,6 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```
     <hr>
 
-### 6. Post Current Production Status Update
-
-- **Endpoint:**
-  ```md
-  143.110.190.164:3004/admin/production/status/update/:id
-  ```
-- **Method:** `POST`
-- **Description:** `Updates the production status for a specific production entry by ID.`
-- **URL Parameters:** - `id`: Production Entry ID (Example: `/production/status/update/101`)
-- **Response Format:** `application/json`
-  - **Success Code:** `200 OK`
-    ```json
-    {
-      "success": "Operation successful.",
-      "data": {
-        "id": "ObjectID(production)",
-        "supervisor": "John Doe",
-        "itemName": "Product XYZ",
-        "workType": "Assembly",
-        "outputQuantity": [100, 103], // Example increment
-        "lastEntryTime": "2024-02-03T14:45:00.000Z",
-        "expectedOutputQuantity": 150,
-        "status": "In Progress",
-        "createdAt": "Timestamp(date-month-year)",
-        "updatedAt": "Timestamp(date-month-year)"
-      }
-    }
-    ```
-  - **Error Code:** `404 Not Found`
-    ```json
-    {
-      "error": "Data not found."
-    }
-    ```
-  - **Error Code:** `500 Internal Server Error`
-    ```json
-    {
-      "error": "Error accessing the database."
-    }
-    ```
-    <hr>
 
 ## Overtime Section
 
@@ -2180,7 +2129,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Request Format:** `application/json`
   ```json
   {
-    "profileID": "12345",
+    "profileID": "PRO000001",
     "profileName": "John Doe",
     "date": "2024-02-03",
     "perHour": 15.5,
@@ -2194,7 +2143,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(overtime)",
-      "profileID": "12345",
+      "profileID": "PRO000001",
       "profileName": "John Doe",
       "date": "2024-02-03",
       "perHour": 15.5,
@@ -2236,7 +2185,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     [
       {
         "id": "ObjectID(overtime)",
-        "profileID": "12345",
+        "profileID": "PRO000001",
         "profileName": "John Doe",
         "date": "2024-02-03",
         "perHour": 15.5,
@@ -2282,7 +2231,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(overtime)",
-      "profileID": "12345",
+      "profileID": "PRO000001",
       "profileName": "John Doe",
       "date": "2024-02-03",
       "perHour": 15.5,
@@ -2401,7 +2350,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Request Format:** `application/json`
   ```json
   {
-    "profileID": "12345",
+    "profileID": "PRO000001",
     "profileName": "John Doe",
     "perHour": 15.5,
     "basicSalary": 1500,
@@ -2414,7 +2363,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(payroll)",
-      "profileID": "12345",
+      "profileID": "PRO000001",
       "profileName": "John Doe",
       "perHour": 15.5,
       "basicSalary": 1500,
@@ -2455,7 +2404,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     [
       {
         "id": "ObjectID(payroll)",
-        "profileID": "12345",
+        "profileID": "PRO000001",
         "profileName": "John Doe",
         "perHour": 15.5,
         "basicSalary": 1500,
@@ -2499,7 +2448,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(payroll)",
-      "profileID": "12345",
+      "profileID": "PRO000001",
       "profileName": "John Doe",
       "perHour": 15.5,
       "basicSalary": 1500,
@@ -2612,18 +2561,16 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
   ```
 - **Method:** `POST`
 - **Description:** `Creates a new expense entry with the provided information.`
-- **Request Format:** `application/json`
-  ```json
-  {
-    "title": "Office Supplies",
-    "description": "Purchase of office supplies",
-    "type": "Office",
-    "amount": 200.0,
-    "usageUnit": 1,
-    "date": "2024-02-01",
-    "status": "Pending",
-    "receiptPicture": "Link or File Path"
-  }
+- **Request Format:** `multipart/form-data`
+  ```md
+  title:Office Supplies
+  description:Purchase of office supplies
+  type:Office
+  amount:200.0
+  usageUnit:1
+  date:2024-02-01
+  status:Pending
+  receiptPicture:Link or File Path
   ```
 - **Response Format:** `application/json`
   - **Success Code:** `201 Created`
@@ -2757,17 +2704,15 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Description:** `Updates information for a specific expense entry by ID.`
 - **URL Parameters:** - `id`: Expense Entry ID (Example: `/expense/update/101`)
 - **Request Format:** `application/json`
-  ```json
-  {
-    "title": "Updated Office Supplies",
-    "description": "Updated purchase of office supplies",
-    "type": "Office",
-    "amount": 250.0,
-    "usageUnit": 1,
-    "date": "2024-02-03",
-    "status": "Pending",
-    "receiptPicture": "Link or File Path"
-  }
+  ```md
+  title:Office Supplies
+  description:Purchase of office supplies
+  type:Office
+  amount:200.0
+  usageUnit:1
+  date:2024-02-01
+  status:Pending
+  receiptPicture:Link or File Path
   ```
 - **Response Format:** `application/json`
   - **Success Code:** `200 OK`
@@ -2963,7 +2908,10 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 
 ### 1. Get Profit Report
 
-- **Endpoint:** `/profit/report`
+- **Endpoint:**
+  ```md
+  143.110.190.164:3004/admin/profit/report
+  ```
 - **Method:** `GET`
 - **Description:** `Generates a profit report based on the specified date range.`
 - **Query Parameters:**
@@ -3000,7 +2948,10 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 
 ### 2. Get Date-Wise Profit Data
 
-- **Endpoint:** `/profit/report/date`
+- **Endpoint:** 
+  ```md
+  143.110.190.164:3004/admin/profit/report/date
+  ```
 - **Method:** `GET`
 - **Description:** `Gets date-wise profit data for the specified date range.`
 - **Query Parameters:**
