@@ -765,7 +765,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(attendance)",
-      "profileID": "GeneratedID(update_profile)",
+      "profileID": "PRO000001",
       "name": "Updated Name",
       "attendance": false,
       "createdAt": "Timestamp(date-month-year)",
@@ -1452,7 +1452,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Request Format:** `application/json`
   ```json
   {
-    "supplierID": "12345",
+    "supplierID": "SUP000001",
     "supplierName": "ABC Suppliers",
     "price": 50.99,
     "status": "In Stock",
@@ -1468,7 +1468,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(inventory)",
-      "supplierID": "12345",
+      "supplierID": "SUP000001",
       "supplierName": "ABC Suppliers",
       "price": 50.99,
       "status": "In Stock",
@@ -1512,7 +1512,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     [
       {
         "id": "ObjectID(inventory)",
-        "supplierID": "12345",
+        "supplierID": "SUP000001",
         "supplierName": "ABC Suppliers",
         "price": 50.99,
         "status": "In Stock",
@@ -1526,7 +1526,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
       },
       {
         "id": "ObjectID(inventory)",
-        "supplierID": "67890",
+        "supplierID": "SUP000002",
         "supplierName": "XYZ Suppliers",
         "price": 35.5,
         "status": "Out of Stock",
@@ -1562,7 +1562,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(inventory)",
-      "supplierID": "12345",
+      "supplierID": "SUP000001",
       "supplierName": "ABC Suppliers",
       "price": 50.99,
       "status": "In Stock",
@@ -1601,8 +1601,8 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Request Format:** `application/json`
   ```json
   {
-    "supplierID": "Updated 12345",
-    "supplierName": "Updated ABC Suppliers",
+    "supplierID": "SUP000002",
+    "supplierName": "ABC Suppliers",
     "price": 55.5,
     "status": "Low Stock",
     "quantity": 120,
@@ -1617,8 +1617,8 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(inventory)",
-      "supplierID": "Updated 12345",
-      "supplierName": "Updated ABC Suppliers",
+      "supplierID": "SUP000002",
+      "supplierName": "ABC Suppliers",
       "price": 55.5,
       "status": "Low Stock",
       "quantity": 120,
@@ -1687,7 +1687,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Request Format:** `application/json`
   ```json
   {
-    "supplierID": "S001",
+    "supplierID": "SUP000001",
     "name": "ABC Supplier",
     "address": "123 Supplier Street",
     "contactNumber": "123-456-7890",
@@ -1700,7 +1700,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(supplier)",
-      "supplierID": "S001",
+      "supplierID": "SUP000001",
       "name": "ABC Supplier",
       "address": "123 Supplier Street",
       "contactNumber": "123-456-7890",
@@ -1741,7 +1741,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     [
       {
         "id": "ObjectID(supplier)",
-        "supplierID": "S001",
+        "supplierID": "SUP000001",
         "name": "ABC Supplier",
         "address": "123 Supplier Street",
         "contactNumber": "123-456-7890",
@@ -1752,7 +1752,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
       },
       {
         "id": "ObjectID(supplier)",
-        "supplierID": "S002",
+        "supplierID": "SUP000002",
         "name": "XYZ Supplier",
         "address": "456 Supplier Street",
         "contactNumber": "987-654-3210",
@@ -1785,7 +1785,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(supplier)",
-      "supplierID": "S001",
+      "supplierID": "SUP000001",
       "name": "ABC Supplier",
       "address": "123 Supplier Street",
       "contactNumber": "123-456-7890",
@@ -1821,7 +1821,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Request Format:** `application/json`
   ```json
   {
-    "supplierID": "S001",
+    "supplierID": "SUP000001",
     "name": "Updated ABC Supplier",
     "address": "Updated 123 Supplier Street",
     "contactNumber": "123-456-7890",
@@ -1834,7 +1834,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
     ```json
     {
       "id": "ObjectID(supplier)",
-      "supplierID": "S001",
+      "supplierID": "SUP000001",
       "name": "Updated ABC Supplier",
       "address": "Updated 123 Supplier Street",
       "contactNumber": "123-456-7890",
@@ -2197,7 +2197,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
       },
       {
         "id": "ObjectID(overtime)",
-        "profileID": "67890",
+        "profileID": "PRO000002",
         "profileName": "Jane Doe",
         "date": "2024-02-04",
         "perHour": 20.0,
@@ -2268,7 +2268,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Request Format:** `application/json`
   ```json
   {
-    "profileID": "Updated 12345",
+    "profileID": "PRO000002",
     "profileName": "Updated John Doe",
     "date": "2024-02-04",
     "perHour": 18.0,
@@ -2415,7 +2415,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
       },
       {
         "id": "ObjectID(payroll)",
-        "profileID": "67890",
+        "profileID": "PRO000002",
         "profileName": "Jane Doe",
         "perHour": 18.0,
         "basicSalary": 1800,
@@ -2570,7 +2570,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
   usageUnit:1
   date:2024-02-01
   status:Pending
-  receiptPicture:Link or File Path
+  receiptPicture:Picture(receipt)
   ```
 - **Response Format:** `application/json`
   - **Success Code:** `201 Created`
@@ -2584,7 +2584,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
       "usageUnit": 1,
       "date": "2024-02-01T00:00:00.000Z",
       "status": "Pending",
-      "receiptPicture": "Link or File Path",
+      "receiptPicture": "https://example.com/recipt.jpg",
       "createdAt": "Timestamp(date-month-year)",
       "updatedAt": "Timestamp(date-month-year)"
     }
@@ -2627,7 +2627,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
         "usageUnit": 1,
         "date": "2024-02-01T00:00:00.000Z",
         "status": "Pending",
-        "receiptPicture": "Link or File Path",
+        "receiptPicture": "https://example.com/recipt.jpg",
         "createdAt": "Timestamp(date-month-year)",
         "updatedAt": "Timestamp(date-month-year)"
       },
@@ -2640,7 +2640,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
         "usageUnit": 1,
         "date": "2024-02-02T00:00:00.000Z",
         "status": "Approved",
-        "receiptPicture": "Link or File Path",
+        "receiptPicture": "https://example.com/recipt.jpg",
         "createdAt": "Timestamp(date-month-year)",
         "updatedAt": "Timestamp(date-month-year)"
       }
@@ -2675,7 +2675,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
       "usageUnit": 1,
       "date": "2024-02-01T00:00:00.000Z",
       "status": "Pending",
-      "receiptPicture": "Link or File Path",
+      "receiptPicture": "https://example.com/recipt.jpg",
       "createdAt": "Timestamp(date-month-year)",
       "updatedAt": "Timestamp(date-month-year)"
     }
@@ -2703,7 +2703,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
 - **Method:** `PUT`
 - **Description:** `Updates information for a specific expense entry by ID.`
 - **URL Parameters:** - `id`: Expense Entry ID (Example: `/expense/update/101`)
-- **Request Format:** `application/json`
+- **Request Format:** `multipart/form-data`
   ```md
   title:Office Supplies
   description:Purchase of office supplies
@@ -2712,7 +2712,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
   usageUnit:1
   date:2024-02-01
   status:Pending
-  receiptPicture:Link or File Path
+  receiptPicture:Picture(receipt)
   ```
 - **Response Format:** `application/json`
   - **Success Code:** `200 OK`
@@ -2726,7 +2726,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
       "usageUnit": 1,
       "date": "2024-02-03T00:00:00.000Z",
       "status": "Pending",
-      "receiptPicture": "Link or File Path",
+      "receiptPicture": "https://example.com/recipt.jpg",
       "createdAt": "Timestamp(date-month-year)",
       "updatedAt": "Timestamp(date-month-year)"
     }
@@ -2805,7 +2805,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
             "usageUnit": 1,
             "date": "2024-02-01T00:00:00.000Z",
             "status": "Pending",
-            "receiptPicture": "Link or File Path",
+            "receiptPicture": "https://example.com/recipt.jpg",
             "createdAt": "Timestamp(date-month-year)",
             "createdAt": "Timestamp(date-month-year)",
             "updatedAt": "Timestamp(date-month-year)"
@@ -2819,7 +2819,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
             "usageUnit": 1,
             "date": "2024-02-02T00:00:00.000Z",
             "status": "Approved",
-            "receiptPicture": "Link or File Path",
+            "receiptPicture": "https://example.com/recipt.jpg",
             "createdAt": "Timestamp(date-month-year)",
             "createdAt": "Timestamp(date-month-year)",
             "updatedAt": "Timestamp(date-month-year)"
@@ -2833,7 +2833,7 @@ The [Your Project Name] backend API provides a comprehensive set of endpoints to
             "usageUnit": 1,
             "date": "2024-02-03T00:00:00.000Z",
             "status": "Pending",
-            "receiptPicture": "Link or File Path",
+            "receiptPicture": "https://example.com/recipt.jpg",
             "createdAt": "Timestamp(date-month-year)",
             "updatedAt": "Timestamp(date-month-year)"
           }
